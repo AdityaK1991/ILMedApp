@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
 
   $scope.$on('$ionicView.beforeEnter', function(e) {
     
+    
    
       $scope.items = HospitalData.Responses.query({
 

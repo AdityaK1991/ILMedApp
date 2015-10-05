@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/main/hospitals',
     views: {
       'tab-main': {
-        templateUrl: 'templates/hospitals.html',
+        templateUrl: 'templates/hospitalSearch.html',
         controller: 'HospitalCtrl'
       }
     }

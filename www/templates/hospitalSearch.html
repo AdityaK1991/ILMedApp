@@ -1,0 +1,26 @@
+<ion-view view-title="Search Hospitals">
+  <ion-content class="padding">
+
+  	<p>Select Hospital Type:</p>
+  	  <ion-radio ng-model="choice" ng-value="CriticalAccessHospital">Critical Access Hospital</ion-radio>
+  	  <ion-radio ng-model="choice" ng-value="GeneralHospital">General Hospital</ion-radio>
+  	  <ion-radio ng-model="choice" ng-value="PediatricHospital">Pediatric Hospital</ion-radio>
+  	  <ion-radio ng-model="choice" ng-value="PsychiatricHospital">Psychiatric Hospital</ion-radio>
+  	  <ion-radio ng-model="choice" ng-value="LongTermAcuteCare">Long Term Acute Care</ion-radio>
+  	  <ion-radio ng-model="choice" ng-value="RehabilitationHospital">Rehabilitation Hospital</ion-radio>
+
+  	<div class="list padding">
+	  <label class="item item-input item-stacked-label">
+	    <span class="input-label">City</span>
+	    <input type="text" placeholder="eg. Chicago" ng-model="hospitalSrch.city" required>
+	  </label>
+	</div>
+
+	<div class = "text-center">
+	  <button class="button button-balanced" ng-click="searchHospitals()">
+		Search
+	  </button>
+ 	</div>
+
+  </ion-content>
+</ion-view>

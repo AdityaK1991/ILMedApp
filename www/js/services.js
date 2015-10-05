@@ -8,10 +8,10 @@ angular.module('starter.services', ['ngResource'])
   var factory = []
 
   factory.Responses = $resource (
-    baseUrl, 
+    baseUrl , //?$where=type_of_hospital="General Hospital" AND city="Chicago" 
     null,
     {
-      query: {method:'GET', isArray:true, url:baseUrl }
+      query: {method:'GET', isArray:true, url:baseUrl}
     });
 
   return factory;
