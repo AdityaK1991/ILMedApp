@@ -4,11 +4,15 @@ angular.module('starter.controllers', [])
 
   $scope.$on('$ionicView.beforeEnter', function(e) {
     
-    
-   
-      $scope.items = HospitalData.Responses.query({
+     // $scope.choice = $stateParams.type_of_hospital
+  	  //$scope.city = $stateParams.city
 
-      });  
+      $scope.searchHospitals = function(){
 
+      	 $scope.items = HospitalData.Responses.query({type_of_hospital:$scope.choice, city:$scope.city} 
+
+     	 });  
+      }
+        
   }) 
-})
+})	

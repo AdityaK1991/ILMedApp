@@ -50,15 +50,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.hospitals', {
+  .state('tab.hospitalSearch', {
     url: '/main/hospitals',
     views: {
       'tab-main': {
         templateUrl: 'templates/hospitalSearch.html',
-        controller: 'HospitalCtrl'
+       
+
       }
     }
   })
+
+    .state('tab.hospitalsList', {
+      url: '/main/hospitals/hospitalsList',
+      views: {
+        'tab-main': {
+          templateUrl: 'templates/hospitals.html',
+          controller: 'HospitalCtrl'
+        }
+      }
+    })
 
   .state('tab.surgeryCenters', {
     url: '/main/surgeryCenter',
