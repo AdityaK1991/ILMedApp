@@ -10,10 +10,11 @@ angular.module('starter.services', ['ngResource'])
   
 
   factory.Responses = $resource (
-    baseUrl + "?$where=type_of_hospital="+"General Hospital"+"&city=:"+"Chicago",
-    null,
+    baseUrl + "?$where=",
+    {type_of_hospital:'@type_of_hospital', city:'@city'},
     {
-      query: {method:'GET', isArray:true}
+      query: {method:'GET', isArray:true},
+      get: {method:'GET'}
     });
 
   return factory;

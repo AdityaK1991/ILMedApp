@@ -10,17 +10,18 @@
   	  <ion-radio ng-model="choice" ng-value="Rehabilitation+Hospital">Rehabilitation Hospital</ion-radio>
 
   	<div class="list padding">
-	  <label class="item item-input item-stacked-label">
-	    <span class="input-label">City</span>
-	    <input type="text" placeholder="eg. Chicago" ng-model="city" required>
-	  </label>
-	</div>
+  	  <label class="item item-input item-stacked-label">
+  	    <span class="input-label">City</span>
+  	    <input type="text" placeholder="eg. Chicago" ng-model="city" required>
+        {{city}}
+  	  </label>
+	  </div>
 
-	<div class = "text-center">
-	  <button class="button button-balanced" ng-click="searchHospitals()" ui-sref="tab.hospitalsList">
-		Search
-	  </button>
- 	</div>
+  	<div class = "text-center">
+  	  <button class="button button-balanced" ng-click="searchHospitals()" ui-sref="tab.hospitalsList">
+  		  Search
+  	  </button>
+   	</div>
 
   </ion-content>
 </ion-view>

@@ -5,13 +5,11 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.beforeEnter', function(e) {
     
      // $scope.choice = $stateParams.type_of_hospital
-  	  //$scope.city = $stateParams.city
+  	 // $scope.city = "Chicago"
 
       $scope.searchHospitals = function(){
 
-      	 $scope.items = HospitalData.Responses.query({type_of_hospital:$scope.choice, city:$scope.city} 
-
-     	 });  
+      	 $scope.items = HospitalData.Responses.get({type_of_hospital:"General Hospital", city:"Chicago" });  
       }
         
   }) 
