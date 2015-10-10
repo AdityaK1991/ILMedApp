@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers')
 
 
 .controller('SurgeryCenterCtrl', function($scope, SurgeryCenterData) {
@@ -9,6 +9,7 @@ angular.module('starter.controllers', [])
       $scope.items = SurgeryCenterData.Responses.query({
 
       });  
+         console.log($scope.items)
 
   }) 
 })

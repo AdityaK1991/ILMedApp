@@ -1,16 +1,24 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers')
 
 .controller('HospitalCtrl', function($scope, HospitalData) {
 
   $scope.$on('$ionicView.beforeEnter', function(e) {
     
-     // $scope.choice = $stateParams.type_of_hospital
-  	 // $scope.city = "Chicago"
+     $scope.hospital={}
 
-      $scope.searchHospitals = function(){
+     $scope.hospitals = HospitalData.AllResponses.query();
 
-      	 $scope.items = HospitalData.Responses.get({type_of_hospital:"General Hospital", city:"Chicago" });  
-      }
-        
-  }) 
+     
+  })
+
+
+  $scope.searchHospitals = function(){
+
+
+	   $scope.hospitals = HospitalData.Responses.query({ type_of_hospital:$scope.hospital.choice, city:$scope.hospital.city });  
+
+		   console.log($scope.hello)
+		   console.log($scope.hosp)
+   
+      } 
 })	

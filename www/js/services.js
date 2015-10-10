@@ -3,18 +3,25 @@ angular.module('starter.services', ['ngResource'])
 .factory('HospitalData', function($resource) {
   // Might use a resource here that returns a JSON array
 
-  var baseUrl = "https://data.illinois.gov/resource/wsms-teqm.json"
+  var baseUrl = "https://data.illinois.gov/resource/pksj-gzqc.json"
 
   var factory = []
 
   
 
   factory.Responses = $resource (
-    baseUrl + "?$where=",
+    baseUrl + "?$where=type_of_hospital=%22:type_of_hospital%22+AND+city=%22:city%22",
     {type_of_hospital:'@type_of_hospital', city:'@city'},
     {
       query: {method:'GET', isArray:true},
       get: {method:'GET'}
+    })
+
+  factory.AllResponses = $resource (
+    baseUrl,
+    null,
+    {
+      query: {method:'GET', isArray:true}
     });
 
   return factory;

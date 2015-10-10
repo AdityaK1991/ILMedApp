@@ -23,11 +23,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+    $ionicConfigProvider.tabs.position('bottom'); // other values: top
+
+}])
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
+
   $stateProvider
 
   // setup an abstract state for the tabs directive
@@ -53,20 +60,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/main/hospitals',
     views: {
       'tab-main': {
-        templateUrl: 'templates/hospitalSearch.html'
+        templateUrl: 'templates/hospitalSearch.html',
+        controller: "HospitalCtrl"
       }
     }
   })
 
-    .state('tab.hospitalsList', {
-      url: '/main/hospitals/hospitalsList',
-      views: {
-        'tab-main': {
-          templateUrl: 'templates/hospitals.html',
-          controller: 'HospitalCtrl'
-        }
-      }
-    })
 
   .state('tab.surgeryCenters', {
     url: '/main/surgeryCenter',
