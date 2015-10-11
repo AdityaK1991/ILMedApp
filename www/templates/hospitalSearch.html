@@ -1,8 +1,15 @@
-<ion-view view-title="Search Hospitals">
+<ion-view view-title="Search Hospitals" cache-view="false">
 
 <ion-header-bar class="bar bar-subheader">
-
-<div class="row">
+<!-- <div class="row">
+  <div class="col">
+    Type
+  </div>
+  <div class="col">
+    City
+  </div>
+</div> -->
+<div class="row"> 
      <!--  <ion-radio ng-model="hospital.choice" ng-value="Critical+Access+Hospital">Critical Access Hospital</ion-radio>
       <ion-radio ng-model="hospital.choice" ng-value="General+Hospital">General Hospital</ion-radio>
       <ion-radio ng-model="hospital.choice" ng-value="Pediatric+Hospital">Pediatric Hospital</ion-radio>
@@ -10,8 +17,8 @@
       <ion-radio ng-model="hospital.choice" ng-value="Long+Term+Acute+Care">Long Term Acute Care</ion-radio>
       <ion-radio ng-model="hospital.choice" ng-value="Rehabilitation+Hospital">Rehabilitation Hospital</ion-radio>
  -->
-
- <div class="col-50">
+ <div class="col">
+  <p><b>Type</b></p>
     <select ng-model="hospital.choice">
       <option style="display:none" value="">Select type</option>
       <option value="General+Hospital">General Hospital</option>
@@ -20,31 +27,45 @@
       <option value="Long+Term+Acute+Care">Long Term Acute Care</option>
       <option value="Rehabilitation+Hospital">Rehabilitation Hospital</option>
     </select>
-</div>
-   <div>
+ </div>
+    <div class="col">
+      <p><b>City</b></p>
       <label class="item item-input item-stacked-label">
-        <input type="text" placeholder="e.g. Chicago" ng-model="hospital.city" >
+          <input type="text" placeholder="e.g. Chicago" ng-model="hospital.city">
       </label>
     </div>
   
 </div>
 
 <div class="text-center">
-      <button class="button button-balanced" ng-click="searchHospitals()" ng-disabled="!hospital.choice || !hospital.city">
+      <button class="button button-full button-positive" ng-click="searchHospitals()" ng-disabled="!hospital.choice || !hospital.city">
         Search
       </button>
 </div>
+
 </ion-header-bar>
 
 
-<ion-content class="has-header has-subheader">
+  <ion-content class="has-header has-subheader">
 
      <ion-list>
-      <ion-item ng-repeat="hospital in hospitals">
-      {{hospital.hospital_name}}
+
+      <ion-item class="item item-button-right" ng-repeat="hospital in hospitals" ng-click="toggleDetails($index)">
+        <p><b>{{hospital.hospital_name}}</b></p>
+         
+         <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospital.phone}}">
+          <i class="icon ion-android-call"></i>
+         </a>
+
+        <ion-item class="transition" ng-show="detailsVisible($index)">
+          <p>{{hospital.type_of_hospital}}</p>
+          <p>{{hospital.address}}</p>
+          <p>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</p>
+        </ion-item>
       </ion-item>
+
     </ion-list>
 
   </ion-content>
-
+  
 </ion-view>

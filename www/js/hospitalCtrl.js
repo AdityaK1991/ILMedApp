@@ -14,11 +14,18 @@ angular.module('starter.controllers')
 
   $scope.searchHospitals = function(){
 
-
 	   $scope.hospitals = HospitalData.Responses.query({ type_of_hospital:$scope.hospital.choice, city:$scope.hospital.city });  
 
-		   console.log($scope.hello)
-		   console.log($scope.hosp)
+		   //console.log($scope.hello)
+		   //console.log($scope.hosp)
    
       } 
+
+   $scope.toggleDetails = function(q){
+   		$scope[q] = !$scope[q]
+   }
+
+   $scope.detailsVisible = function(q){
+   		return $scope[q]
+   }
 })	

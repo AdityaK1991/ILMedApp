@@ -61,7 +61,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-main': {
         templateUrl: 'templates/hospitalSearch.html',
-        controller: "HospitalCtrl"
+        controller: "HospitalCtrl",
+        cache: "false"
       }
     }
   })

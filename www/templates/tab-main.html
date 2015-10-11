@@ -1,26 +1,37 @@
 <ion-view view-title="Dashboard">
+  
   <ion-content class="padding">
+       <div class="row">
+      	
+        <div class="col">
+        	<img class="button button-block button-light responsive-container" ui-sref="tab.hospitalSearch" ng-src="img/hospital.png" style=" height:140px">
+            <div class="text-center"> Hospitals </div> 
+          </img>
+        </div>
 
-  <div class="row">
-  	<div class="col">
-    	<a class="button button-block button-light" ui-sref="tab.hospitalSearch">Hospitals</a>
-    </div>
+        <div class="col">
+        	<img class="button button-block button-light responsive-container" ui-sref="tab.surgeryCenters" ng-src="img/ambulatory.png" style=" height:140px"> 
+            <div class="text-center">Ambulatory Surgical Treatment Centers</div>
+          </img>
+       	</div>
 
-    <div class="col">
-    	<a class="button button-block button-light" ui-sref="tab.surgeryCenters">Ambulatory Surgical Treatment Centers</a>
-   	</div>
-  </div>
+      </div>
 
+      <div class="row">
 
-  <div class="row">
-  	<div class="col">
-    	<a class="button button-block button-light" ui-sref="tab.hospiceCenters">Hospice Centers</a>
-    </div>
+      	<div class="col">
+        	<img class="button button-block button-light responsive-container" ui-sref="tab.hospiceCenters" ng-src="img/hospice.png" style="height:140px">
+            <div class="text-center">Hospice Centers</div>
+          </img>
+        </div>
 
-    <div class="col">
-    	<a class="button button-block button-light" ui-sref="tab.healthAgencies">Home Health Agencies</a>
-    </div>
-  </div>
+        <div class="col">
+        	<img class="button button-block button-light responsive-container" ui-sref="tab.healthAgencies" ng-src="img/home_health_care.png" style=" height:140px">
+            <div class="text-center">Home Health Agencies</div>
+          </img>
+        </div>
+
+      </div>
 
   </ion-content>
 </ion-view>
