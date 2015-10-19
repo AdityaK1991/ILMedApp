@@ -18,7 +18,7 @@
       <ion-radio ng-model="hospital.choice" ng-value="Rehabilitation+Hospital">Rehabilitation Hospital</ion-radio>
  -->
  <div class="col">
-  <p><b>Type</b></p>
+  <!-- <p><b>Type</b></p>
     <select ng-model="hospital.choice">
       <option style="display:none" value="">Select type</option>
       <option value="General+Hospital">General Hospital</option>
@@ -26,21 +26,37 @@
       <option value="Psychiatric+Hospital">Psychiatric Hospital</option>
       <option value="Long+Term+Acute+Care">Long Term Acute Care</option>
       <option value="Rehabilitation+Hospital">Rehabilitation Hospital</option>
-    </select>
+    </select> -->
  </div>
-    <div class="col">
+    <!-- <div class="col">
       <p><b>City</b></p>
       <label class="item item-input item-stacked-label">
           <input type="text" placeholder="e.g. Chicago" ng-model="hospital.city">
       </label>
-    </div>
+    </div> -->
   
 </div>
 
-<div class="text-center">
-      <button class="button button-full button-positive" ng-click="searchHospitals()" ng-disabled="!hospital.choice || !hospital.city">
-        Search
-      </button>
+<div class="row bar bar-header item-input-inset">
+<div class="col col-50">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" ng-model="searchText" placeholder="Search">
+  </label>
+</div>
+  <!-- <button class="button button-clear">
+    Cancel
+  </button> -->
+  <div>
+  <select ng-model="searchText" class="col col-100">
+     <option style="display:none" value="">Select type</option>
+      <option value="General Hospital">General Hospital</option>
+      <option value="Pediatric Hospital">Pediatric Hospital</option>
+      <option value="Psychiatric Hospital">Psychiatric Hospital</option>
+      <option value="Long Term Acute Care">Long Term Acute Care</option>
+      <option value="Rehabilitation Hospital">Rehabilitation Hospital</option>
+    </select>
+</div>
 </div>
 
 </ion-header-bar>
@@ -49,7 +65,7 @@
 
       <ion-list>
 
-        <ion-item class="item item-button-right" ng-repeat="hospital in hospitals" ng-click="toggleDetails($index)">
+        <ion-item class="item item-button-right" ng-repeat="hospital in hospitals | filter:searchText" ng-click="toggleDetails($index)">
           <p><b>{{hospital.hospital_name}}</b></p>
            <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospital.phone}}">
             <i class="icon ion-android-call"></i>
