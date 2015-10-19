@@ -45,27 +45,27 @@
 
 </ion-header-bar>
 
+<ion-content class="has-header has-subheader">
 
-  <ion-content class="has-header has-subheader">
+      <ion-list>
 
-     <ion-list>
+        <ion-item class="item item-button-right" ng-repeat="hospital in hospitals" ng-click="toggleDetails($index)">
+          <p><b>{{hospital.hospital_name}}</b></p>
+           <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospital.phone}}">
+            <i class="icon ion-android-call"></i>
+           </a>
 
-      <ion-item class="item item-button-right" ng-repeat="hospital in hospitals" ng-click="toggleDetails($index)">
-        <p><b>{{hospital.hospital_name}}</b></p>
-         
-         <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospital.phone}}">
-          <i class="icon ion-android-call"></i>
-         </a>
+          <ion-item class="transition" ng-show="detailsVisible($index)">
+            <p>{{hospital.type_of_hospital}}</p>
+            <p>{{hospital.address}}</p>
+            <p>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</p>
+            <a class="button" ng-click="$event.stopPropagation() && openMap()" ui-sref="tab.hospitalMap">Navigate</a>
+          </ion-item>
 
-        <ion-item class="transition" ng-show="detailsVisible($index)">
-          <p>{{hospital.type_of_hospital}}</p>
-          <p>{{hospital.address}}</p>
-          <p>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</p>
         </ion-item>
-      </ion-item>
 
-    </ion-list>
+      </ion-list>
 
-  </ion-content>
+   </ion-content>
   
 </ion-view>

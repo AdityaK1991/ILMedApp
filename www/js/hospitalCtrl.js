@@ -28,4 +28,10 @@ angular.module('starter.controllers')
    $scope.detailsVisible = function(q){
    		return $scope[q]
    }
+
+   $scope.openMap = function(){
+    
+   }
+
 })	
+

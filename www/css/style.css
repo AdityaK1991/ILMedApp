@@ -20,3 +20,21 @@
 .list .item.transition.ng-hide {
    line-height: 10px;
 }
+
+.slider-pager {
+  position: absolute;
+  bottom: 3px;
+  z-index: 1;
+  width: 100%;
+  height: 15px;
+  text-align: center; 
+}
+
+map {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll, .mapWrap {
+  height: 100%;
+}
