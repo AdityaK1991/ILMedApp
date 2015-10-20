@@ -1,16 +1,21 @@
-<ion-view view-title="Dashboard">
+<ion-view>
+  
+  <ion-header-bar class="bar-calm">
+    <button class="button button-icon icon ion-ios-medical"></button>
+    <div class="h1 title">Illinois Health Care</div>
+  </ion-header-bar>
   
   <ion-content class="padding">
        <div class="row">
       	
-        <div class="col">
-        	<img class="button button-block button-light responsive-container" ui-sref="tab.hospitalSearch" ng-src="img/hospital.png" style=" height:140px">
+        <div class="col" ui-sref="tab.hospitalSearch">
+        	<img class="button button-block button-clear responsive-container" ng-src="img/hospital.png" style=" height:140px">
             <div class="text-center"> Hospitals </div> 
           </img>
         </div>
 
-        <div class="col">
-        	<img class="button button-block button-light responsive-container" ui-sref="tab.surgeryCenters" ng-src="img/ambulatory.png" style=" height:140px"> 
+        <div class="col" ui-sref="tab.surgeryCenters">
+        	<img class="button button-block button-clear responsive-container" ng-src="img/ambulatory.png" style=" height:140px"> 
             <div class="text-center">Ambulatory Surgical Treatment Centers</div>
           </img>
        	</div>
@@ -19,14 +24,14 @@
 
       <div class="row">
 
-      	<div class="col">
-        	<img class="button button-block button-light responsive-container" ui-sref="tab.hospiceCenters" ng-src="img/hospice.png" style="height:140px">
+      	<div class="col" ui-sref="tab.hospiceCenters">
+        	<img class="button button-block button-clear responsive-container" ng-src="img/hospice.png" style="height:140px">
             <div class="text-center">Hospice Centers</div>
           </img>
         </div>
 
-        <div class="col">
-        	<img class="button button-block button-light responsive-container" ui-sref="tab.healthAgencies" ng-src="img/home_health_care.png" style=" height:140px">
+        <div class="col" ui-sref="tab.healthAgencies">
+        	<img class="button button-block button-clear responsive-container" ng-src="img/home_health_care.png" style=" height:140px">
             <div class="text-center">Home Health Agencies</div>
           </img>
         </div>

@@ -6,7 +6,8 @@
 
 .responsive-container {
   position: relative;
-  width: 100%
+  width: 100%;
+
 }
 
 .list .item.transition {

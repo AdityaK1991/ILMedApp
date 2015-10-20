@@ -1,5 +1,10 @@
 <ion-view view-title="Search Hospitals" cache-view="false">
 
+ <ion-header-bar class="bar-calm">
+    <button class="button button-icon icon ion-ios-medical"></button>
+    <div class="h1 title">Illinois Health Care</div>
+ </ion-header-bar>
+  
 <ion-header-bar class="bar bar-subheader">
 <!-- <div class="row">
   <div class="col">
@@ -41,14 +46,14 @@
 <div class="col col-50">
   <label class="item-input-wrapper">
     <i class="icon ion-ios-search placeholder-icon"></i>
-    <input type="search" ng-model="searchText" placeholder="Search">
+    <input type="search" ng-model="searchCity" placeholder="Search City">
   </label>
 </div>
   <!-- <button class="button button-clear">
     Cancel
   </button> -->
   <div>
-  <select ng-model="searchText" class="col col-100">
+  <select ng-model="searchType" class="col col-100">
      <option style="display:none" value="">Select type</option>
       <option value="General Hospital">General Hospital</option>
       <option value="Pediatric Hospital">Pediatric Hospital</option>
@@ -65,7 +70,7 @@
 
       <ion-list>
 
-        <ion-item class="item item-button-right" ng-repeat="hospital in hospitals | filter:searchText" ng-click="toggleDetails($index)">
+        <ion-item class="item item-button-right" ng-repeat="hospital in hospitals | filter:searchCity | filter:searchType" ng-click="toggleDetails($index)">
           <p><b>{{hospital.hospital_name}}</b></p>
            <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospital.phone}}">
             <i class="icon ion-android-call"></i>
