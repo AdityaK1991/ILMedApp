@@ -7,6 +7,10 @@ angular.module('starter.controllers')
      $scope.hospital={}
 
      $scope.hospitals = HospitalData.AllResponses.query();
+     $scope.navigate=function(msg){
+      alert(msg);
+$location.path("/maps")
+     }
 
      
   })

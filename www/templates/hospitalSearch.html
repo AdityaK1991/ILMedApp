@@ -80,7 +80,7 @@
             <p>{{hospital.type_of_hospital}}</p>
             <p>{{hospital.address}}</p>
             <p>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</p>
-            <a class="button" ng-click="$event.stopPropagation() && openMap()" ui-sref="tab.hospitalMap">Navigate</a>
+            <a class="button" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
           </ion-item>
 
         </ion-item>
