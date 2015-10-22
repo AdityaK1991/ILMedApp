@@ -39,3 +39,30 @@ map {
 .scroll, .mapWrap {
   height: 100%;
 }
+
+
+.color-dark-blue{
+  background-color: #4981CE;
+  background-image: linear-gradient(0deg, #0c63ee, #0c63ee 50%, transparent 50%);
+  color: #fff; 
+}
+.color-dark-blue .title {
+      color: #fff; }
+.color-dark-blue .button {
+      color: #fff; }
+
+
+
+.color-light-blue{
+  color: #7EB6FF;
+  background-color: #9BC4E2;
+}
+
+.color-blue-shade{
+  background-color: #c2dfff;
+}
+
+.tabs-striped.tabs-positive .tabs {
+  background-color: #4981CE; }
+
+  
