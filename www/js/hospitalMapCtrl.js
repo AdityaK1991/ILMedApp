@@ -29,11 +29,11 @@ var onSuccess = function(position) {
 var source, destination;
         var directionsDisplay;
         directionsService = new google.maps.DirectionsService();
-        google.maps.event.addDomListener(window, 'load', function () {
+       /* google.maps.event.addDomListener(window, 'load', function () {
             new google.maps.places.SearchBox(document.getElementById('txtSource'));
             new google.maps.places.SearchBox(document.getElementById('txtDestination'));
             directionsDisplay = new google.maps.DirectionsRenderer({ 'draggable': true });
-        });
+        });*/
     $scope.GetRoute();
   //  $window.location.reload(true);
 };
