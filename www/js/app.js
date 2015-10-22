@@ -99,7 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   })
 
   .state('tab.hospitalMap', {
-      url: '/main/hospitals/hospitalMap',
+      url: '/main/hospitals/hospitalMap:loc',
       views: {
         'tab-main': {
           templateUrl: 'templates/hospitalsOnMap.html',

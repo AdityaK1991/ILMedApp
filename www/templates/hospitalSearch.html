@@ -28,7 +28,6 @@
     </select>
   </div>
 <a class="button" ui-sref="tab.mapsmarker">maps</a>
-<a class="button" ui-sref="tab.hospitalMap">mapssss</a>
 </div>
 
 </ion-header-bar>
@@ -47,7 +46,7 @@
             <p><b>{{hospital.type_of_hospital}}</b></p>
             <p><b>{{hospital.address}}</b></p>
             <p><b>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</b></p>
-            <a class="button button-positive" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
+            <a class="button button-positive" ui-sref="tab.hospitalMap({loc: hospital.address})">Navigate</a>
           </ion-item>
 
         </ion-item>

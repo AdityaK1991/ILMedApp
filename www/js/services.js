@@ -22,7 +22,7 @@ angular.module('starter.services', ['ngResource'])
     null,
     {
       query: {method:'GET', isArray:true}
-    });
+    })
 
   return factory;
 

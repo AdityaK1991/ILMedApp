@@ -1,33 +1,85 @@
 var mod=angular.module('starter.controllers')
-mod.controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
-
+mod.controller('MarkerRemoveCtrl', function($scope, $ionicLoading,$stateParams) {
+$scope.address=$stateParams.loc;
   $scope.positions = [{
     lat: 43.07493,
     lng: -89.381388
   }];
 
+var curLat;
+var curLng;
+
   $scope.$on('mapInitialized', function(event, map) {
     $scope.map = map;
+   
+
+     navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      curLat=position.coords.latitude;
+      curLng=position.coords.longitude;
+     // $scope.positions.push({lat: pos.k,lng: pos.B});
+      console.log(pos);
+       console.log("called");
+      $scope.map.setCenter(pos);
+      $ionicLoading.hide();
+      var currentLoc = new google.maps.LatLng(curLat, curLng);
+    var dest = new google.maps.LatLng($scope.positions.lat, $scope.positions.lng);
+            var mapOptions = {
+                zoom: 7,
+                center: currentLoc
+            };
+          //   directionsDisplay = new google.maps.DirectionsRenderer({ 'draggable': true });
+              var directionsDisplay = new google.maps.DirectionsRenderer();
+          //  map = new google.maps.Map(document.getElementById('dvMap'), mapOptions);
+            directionsDisplay.setMap($scope.map);
+         //  directionsDisplay.setPanel(document.getElementById('dvPanel'));
+
+            //*********DIRECTIONS AND ROUTE**********************//
+          //  source = document.getElementById("txtSource").value;
+         //  destination = document.getElementById("txtDestination").value;
+           // alert(source +" "+destination);
+           
+ var directionsService = new google.maps.DirectionsService();
+            var request = {
+                origin: currentLoc,
+                destination: $scope.address,
+               // destination: "200 Stahllhut Drive, Lincoln",
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+    });
   });
 
-  $scope.centerOnMe= function(){
+//$scope.GetRoute();
+
+   
+
+
+  /*$scope.centerOnMe= function(){
   $scope.positions = [];
     
-    
+    console.log("called");
     $ionicLoading.show({
       template: 'Loading...'
     });
 
 
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      $scope.positions.push({lat: pos.k,lng: pos.B});
-      console.log(pos);
-      $scope.map.setCenter(pos);
-      $ionicLoading.hide();
-    });
+
 
   };
+*/
+
+  $scope.GetRoute = function(){
+alert("called");
+    
+    
+
+  }
 
 });
 
