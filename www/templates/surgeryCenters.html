@@ -1,14 +1,14 @@
 <ion-view>
 
- <ion-header-bar class="bar-calm">
-    <button class="button button-icon icon ion-ios-medical"></button>
+ <ion-header-bar class="color-dark-blue">
+    <button class="button button-icon icon ion-ios-medical" ui-sref="tab.main"></button>
     <div class="h1 title">Ambulatory Surgery Centers</div>
  </ion-header-bar>
 
 <div class="bar bar-subheader">
 
 
-<div class="row bar bar-header item-input-inset">
+<div class="row bar bar-header item-input-inset color-light-blue">
   <label class="item-input-wrapper">
     <i class="icon ion-ios-search placeholder-icon"></i>
     <input type="search" ng-model="searchCity" placeholder="Search City">
@@ -32,7 +32,7 @@
             <i class="icon ion-android-call"></i>
            </a>
 
-          <ion-item class="transition" ng-show="detailsVisible($index)">
+          <ion-item class="transition color-blue-shade" ng-show="detailsVisible($index)">
             <p>{{astc.address}}</p>
             <p>{{astc.city}}, {{astc.county}}, {{astc.zip}}</p>
             <a class="button" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
