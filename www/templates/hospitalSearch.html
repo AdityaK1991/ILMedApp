@@ -1,54 +1,19 @@
-<ion-view view-title="Search Hospitals" cache-view="false">
+<ion-view cache-view="false">
 
- <ion-header-bar class="bar-calm">
-    <button class="button button-icon icon ion-ios-medical"></button>
-    <div class="h1 title">Illinois Health Care</div>
+ <ion-header-bar class="color-dark-blue">
+    <button class="button button-icon icon ion-ios-medical" ui-sref="tab.main"></button>
+    <div class="h1 title">Hospitals</div>
  </ion-header-bar>
   
 <ion-header-bar class="bar bar-subheader">
-<!-- <div class="row">
-  <div class="col">
-    Type
-  </div>
-  <div class="col">
-    City
-  </div>
-</div> -->
-<div class="row"> 
-     <!--  <ion-radio ng-model="hospital.choice" ng-value="Critical+Access+Hospital">Critical Access Hospital</ion-radio>
-      <ion-radio ng-model="hospital.choice" ng-value="General+Hospital">General Hospital</ion-radio>
-      <ion-radio ng-model="hospital.choice" ng-value="Pediatric+Hospital">Pediatric Hospital</ion-radio>
-      <ion-radio ng-model="hospital.choice" ng-value="Psychiatric+Hospital">Psychiatric Hospital</ion-radio>
-      <ion-radio ng-model="hospital.choice" ng-value="Long+Term+Acute+Care">Long Term Acute Care</ion-radio>
-      <ion-radio ng-model="hospital.choice" ng-value="Rehabilitation+Hospital">Rehabilitation Hospital</ion-radio>
- -->
- <div class="col">
-  <!-- <p><b>Type</b></p>
-    <select ng-model="hospital.choice">
-      <option style="display:none" value="">Select type</option>
-      <option value="General+Hospital">General Hospital</option>
-      <option value="Pediatric+Hospital">Pediatric Hospital</option>
-      <option value="Psychiatric+Hospital">Psychiatric Hospital</option>
-      <option value="Long+Term+Acute+Care">Long Term Acute Care</option>
-      <option value="Rehabilitation+Hospital">Rehabilitation Hospital</option>
-    </select> -->
- </div>
-    <!-- <div class="col">
-      <p><b>City</b></p>
-      <label class="item item-input item-stacked-label">
-          <input type="text" placeholder="e.g. Chicago" ng-model="hospital.city">
-      </label>
-    </div> -->
-  
-</div>
 
-<div class="row bar bar-header item-input-inset">
-<div class="col col-50">
-  <label class="item-input-wrapper">
-    <i class="icon ion-ios-search placeholder-icon"></i>
-    <input type="search" ng-model="searchCity" placeholder="Search City">
-  </label>
-</div>
+<div class="row bar bar-header item-input-inset color-light-blue">
+  <div class="col col-50">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" ng-model="searchCity" placeholder="Search City">
+    </label>
+  </div>
   <!-- <button class="button button-clear">
     Cancel
   </button> -->
@@ -61,7 +26,7 @@
       <option value="Long Term Acute Care">Long Term Acute Care</option>
       <option value="Rehabilitation Hospital">Rehabilitation Hospital</option>
     </select>
-</div>
+  </div>
 <a class="button" ui-sref="tab.mapsmarker">maps</a>
 </div>
 
