@@ -6,23 +6,14 @@ angular.module('starter.controllers')
     
      $scope.hospital={}
 
-     $scope.hospitals = HospitalData.AllResponses.query();
-     $scope.navigate=function(msg){
-      alert(msg);
-$location.path("/maps")
-     }
-
+     $scope.hospitals = HospitalData.AllResponses.query({});
      
   })
 
 
   $scope.searchHospitals = function(){
 
-	   $scope.hospitals = HospitalData.Responses.query({ type_of_hospital:$scope.hospital.choice, city:$scope.hospital.city });  
-
-		   //console.log($scope.hello)
-		   //console.log($scope.hosp)
-   
+	   $scope.hospitals = HospitalData.Responses.query({ type_of_hospital:$scope.hospital.choice, city:$scope.hospital.city }); 
       } 
 
    $scope.toggleDetails = function(q){
