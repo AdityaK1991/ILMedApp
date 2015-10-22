@@ -5,6 +5,7 @@ angular.module('starter.controllers')
 	$scope.address=$stateParams.loc;
 	//alert("called"+$scope.address);
 
+
 // onSuccess Callback
 // This method accepts a Position object, which contains the
 // current GPS coordinates

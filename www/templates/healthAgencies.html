@@ -1,9 +1,47 @@
-<ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <ion-list>
-      <ion-item ng-repeat="item in items">
-        {{item}}
-      </ion-item>
-    </ion-list>
-  </ion-content>
+<ion-view>
+  
+ <ion-header-bar class="bar-calm">
+  <button class="button button-icon icon ion-ios-medical"></button>
+  <div class="h1 title">Health Agencies</div>
+ </ion-header-bar>
+
+<div class="bar bar-subheader">
+
+
+<div class="row bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" ng-model="searchCity" placeholder="Search City">
+  </label>
+
+  <!-- <button class="button button-clear">
+    Cancel
+  </button> -->
+  
+</div>
+
+</div>
+
+<ion-content class="has-header has-subheader">
+
+      <ion-list>
+
+        <ion-item class="item item-button-right" ng-repeat="health_agency in health_agencies | filter:searchCity" ng-click="toggleDetails($index)">
+          <p><b>{{health_agency.home_health_agency}}</b></p>
+           <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospice.phone}}">
+            <i class="icon ion-android-call"></i>
+           </a>
+
+          <ion-item class="transition" ng-show="detailsVisible($index)">
+            <p>{{health_agency.address}}</p>
+            <p>{{health_agency.city}}, {{health_agency.county}}, {{health_agency.zip}}</p>
+            <a class="button" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
+          </ion-item>
+
+        </ion-item>
+
+      </ion-list>
+
+   </ion-content>
+
 </ion-view>
