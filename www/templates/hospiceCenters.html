@@ -32,10 +32,10 @@
             <i class="icon ion-android-call"></i>
            </a>
 
-          <ion-item class="transition color-blue-shade" ng-show="detailsVisible($index)">
-            <p>{{hospice.address}}</p>
-            <p>{{hospice.city}}, {{hospice.county}}, {{hospice.zip}}</p>
-            <a class="button" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
+          <ion-item class="transition" ng-show="detailsVisible($index)">
+            <p><b>{{hospice.address}}</b></p>
+            <p><b>{{hospice.city}}, {{hospice.county}}, {{hospice.zip}}</b></p>
+            <a class="button button-positive" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
           </ion-item>
 
         </ion-item>

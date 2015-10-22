@@ -44,10 +44,10 @@
            </a>
 
           <ion-item class="transition" ng-show="detailsVisible($index)">
-            <p>{{hospital.type_of_hospital}}</p>
-            <p>{{hospital.address}}</p>
-            <p>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</p>
-            <a class="button" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
+            <p><b>{{hospital.type_of_hospital}}</b></p>
+            <p><b>{{hospital.address}}</b></p>
+            <p><b>{{hospital.city}}, {{hospital.county}}, {{hospital.zip}}</b></p>
+            <a class="button button-positive" ui-sref="tab.maps({loc: hospital.address})">Navigate</a>
           </ion-item>
 
         </ion-item>
