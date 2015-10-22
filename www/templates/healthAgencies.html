@@ -28,7 +28,7 @@
 
         <ion-item class="item item-button-right" ng-repeat="health_agency in health_agencies | filter:searchCity" ng-click="toggleDetails($index)">
           <p><b>{{health_agency.home_health_agency}}</b></p>
-           <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{hospice.phone}}">
+           <a class="button button-clear button-balanced" ng-click="$event.stopPropagation()" href="tel:{{health_agency.phone_.phone_number}}">
             <i class="icon ion-android-call"></i>
            </a>
 
